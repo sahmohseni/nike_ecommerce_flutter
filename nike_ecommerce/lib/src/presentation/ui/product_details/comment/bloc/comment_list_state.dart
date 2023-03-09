@@ -7,9 +7,12 @@ abstract class CommentListState extends Equatable {
   List<Object> get props => [];
 }
 
-class CommentListLoding extends CommentListState {}
+class CommentListLoading extends CommentListState {}
 
-class CommentListSuccess extends CommentListState {}
+class CommentListSuccess extends CommentListState {
+  final List<CommentEntity> comments;
+  const CommentListSuccess({required this.comments});
+}
 
 class CommentListError extends CommentListState {
   final String errorMessage;
